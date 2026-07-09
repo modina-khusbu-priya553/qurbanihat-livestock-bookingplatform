@@ -7,15 +7,17 @@ import { FaArrowRight, FaPlay } from "react-icons/fa";
 const Banner = () => {
     return (
         <div className='bg-base-200'>
-            <div className="container mx-auto px-4 py-2.5 md:py-20">
+            <div className="container mx-auto px-4 pt-2.5 md:pt-20">
                 <div className="flex items-center gap-8 flex-col-reverse justify-between lg:flex-row-reverse">
-                    <Image
+                    <div>
+                        <Image
                         src={BannerImage}
                         alt='Cow'
                         width={500}
                         height={200}
                         className='w-full max-w-md md:max-w-lg h-auto rounded-2xl'
                     />
+                    </div>
                     <div className='flex flex-col items-center lg:items-start gap-3 md:gap-9'>
                         <h1 className='font-bold text-4xl md:text-7xl'>Your  
                             <span className='text-3xl md:text-5xl text-[#FB5607]'> Trusted</span> 
