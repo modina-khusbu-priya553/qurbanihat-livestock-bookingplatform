@@ -31,7 +31,7 @@ const Banner = () => {
                         </p>
                         <div className='flex items-center justify-center gap-2.5'>
                             <button className="btn bg-[#4CC9F0] md:text-lg text-white">Explore Now <FaArrowRight /></button>
-                            <button className='btn btn-soft btn-info md:text-lg'><FaPlay /> How it Works</button>
+                            <button className='btn btn-outline btn-info md:text-lg'><FaPlay /> How it Works</button>
                         </div>
                     </div>
                 </div>
