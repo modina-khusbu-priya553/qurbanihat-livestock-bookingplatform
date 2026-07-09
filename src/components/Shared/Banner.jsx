@@ -16,14 +16,14 @@ const Banner = () => {
                         height={200}
                         className='w-full max-w-md md:max-w-lg h-auto rounded-2xl'
                     />
-                    <div className='flex flex-col items-center lg:items-start gap-2'>
+                    <div className='flex flex-col items-center lg:items-start gap-3 md:gap-9'>
                         <h1 className='font-bold text-4xl md:text-7xl'>Your  
                             <span className='text-3xl md:text-5xl text-[#FB5607]'> Trusted</span> 
                         <br/> 
                             <span className='text-3xl md:text-5xl text-[#3A86FF]'>Livestock</span> Marketplace
                         </h1>
 
-                        <p className="py-6 font-medium text-md md:text-xl text-gray-600">
+                        <p className="font-medium text-md md:text-xl text-gray-500">
                             Welcome to QurbaniHat, your trusted livestock booking platform. 
                             We make it easy to find <br/>healthy and verified cows and goats for 
                             Qurbani by providing detailed information, transparent pricing, 

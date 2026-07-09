@@ -37,7 +37,7 @@ const Navbar = () => {
                             />
                         </div>
 
-                        <h2 className='text-3xl font-bold '>QurbaniHat</h2>
+                        <h2 className='text-lg md:text-3xl font-bold'>QurbaniHat</h2>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -46,8 +46,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="flex gap-2 navbar-end">
-                    <button className='btn text-lg text-white bg-[#4CC9F0]'><Link href="/signIn">Sign In</Link></button>
-                    <button className='btn text-lg bg-[#4361EE] text-white'><Link href="/signUp">Sign Up</Link></button>
+                    <button className='btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl md:text-lg text-white bg-[#4CC9F0]'><Link href="/signIn">Sign In</Link></button>
+                    <button className='btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl md:text-lg bg-[#4361EE] text-white'><Link href="/signUp">Sign Up</Link></button>
                 </div>
             </div>
         </div>
