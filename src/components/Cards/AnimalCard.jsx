@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { FaWeightHanging } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
@@ -31,7 +32,7 @@ const AnimalCard = ({animal}) => {
                         <div className='flex items-center justify-center gap-1.5'><FaWeightHanging />
                             <h2 className='font-medium text-lg'>{animal.weight} KG</h2></div>
                     </div>
-                    <button className='btn btn-xs sm:btn-sm md:btn-md rounded-full'>Vew Details</button>
+                    <button className='btn btn-xs sm:btn-sm md:btn-md rounded-full'><Link href={`/allAnimals/${animal.id}`}>Vew Details</Link></button>
                 </div>
             </div>
         </div>

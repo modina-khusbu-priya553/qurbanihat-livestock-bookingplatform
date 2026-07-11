@@ -4,3 +4,4 @@ export const allAnimalsData = async() =>{
     return data;
 
 }
+
