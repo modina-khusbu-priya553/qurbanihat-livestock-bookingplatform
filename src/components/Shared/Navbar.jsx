@@ -13,7 +13,7 @@ const Navbar = () => {
                 </>
     return (
         <div className='bg-base-100 shadow-sm '>
-            <div className="navbar container mx-auto">
+            <div className="navbar max-w-7xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -45,8 +45,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="flex gap-2 navbar-end">
-                    <button className='btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl md:text-lg text-white bg-[#4CC9F0]'><Link href="/signIn">Sign In</Link></button>
-                    <button className='btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl md:text-lg bg-[#4361EE] text-white'><Link href="/signUp">Sign Up</Link></button>
+                    <button className='btn btn-xs sm:btn-sm md:btn-md rounded-lg text-white bg-[#4CC9F0]'><Link href="/signIn">Sign In</Link></button>
+                    <button className='btn btn-xs sm:btn-sm md:btn-md rounded-lg  bg-[#4361EE] text-white'><Link href="/signUp">Sign Up</Link></button>
                 </div>
             </div>
         </div>

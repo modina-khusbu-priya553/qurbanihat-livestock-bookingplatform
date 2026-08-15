@@ -7,7 +7,7 @@ import { FaArrowRight, FaPlay } from "react-icons/fa";
 const Banner = () => {
     return (
         <div className='bg-base-200'>
-            <div className="container mx-auto px-4 pt-2.5 md:pt-20">
+            <div className="max-w-7xl mx-auto px-4 pt-2.5 md:pt-20">
                 <div className="flex items-center gap-8 flex-col-reverse justify-between lg:flex-row-reverse">
                     <div>
                         <Image
@@ -20,7 +20,7 @@ const Banner = () => {
                     </div>
                     <div className='flex flex-col items-center lg:items-start gap-3 md:gap-9'>
                         <h1 className='font-bold text-4xl md:text-7xl'>Your  
-                            <span className='text-3xl md:text-5xl text-[#FB5607]'> Trusted</span> 
+                            <span className='text-3xl md:text-5xl text-[#4CC9F0]'> Trusted</span> 
                         <br/> 
                             <span className='text-3xl md:text-5xl text-[#3A86FF]'>Livestock</span> Marketplace
                         </h1>
@@ -32,8 +32,8 @@ const Banner = () => {
                             <br/>and a simple online booking experience.
                         </p>
                         <div className='flex items-center justify-center gap-2.5'>
-                            <button className="btn bg-[#4CC9F0] md:text-lg text-white">Explore Now <FaArrowRight /></button>
-                            <button className='btn btn-outline btn-info md:text-lg'><FaPlay /> How it Works</button>
+                            <button className="btn bg-[#4CC9F0] text-white rounded-lg">Explore Now <FaArrowRight /></button>
+                            <button className='btn btn-outline rounded-lg border-[#3A86FF] text-[#3A86FF] hover:bg-blue-400 hover:text-white'><FaPlay /> How it Works</button>
                         </div>
                     </div>
                 </div>

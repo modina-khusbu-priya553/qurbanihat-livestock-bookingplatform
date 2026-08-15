@@ -8,7 +8,7 @@ const Featured = async() => {
     
 
     return (
-        <div className='container mx-auto my-14 px-3.5'>
+        <div className='max-w-7xl mx-auto my-14 px-3.5'>
             <div>
                 <div className='text-center space-y-5'>
                     <h2 className='font-bold text-2xl md:text-5xl'>Our Featured Livestock Collection</h2>
