@@ -3,15 +3,15 @@ import { allAnimalsData } from '@/lib/AnimalsData';
 import React from 'react';
 
 const AnimalsDetailPage = async({params}) => {
-    const {animalId} = await params;
-    console.log(animalId)
+    // const {animalId} = await params;
+    // console.log(animalId)
     
-    const animalDetails = await allAnimalsData();
-    const animal = animalDetails.find(animalDetail => animalDetail.id == animalId);
+    // const animalDetails = await allAnimalsData();
+    // const animal = animalDetails.find(animalDetail => animalDetail.id == animalId);
 
     return (
         <div>
-            <DetailsCard animal={animal}></DetailsCard>
+            {/* <DetailsCard animal={animal}></DetailsCard> */}
         </div>
     );
 };

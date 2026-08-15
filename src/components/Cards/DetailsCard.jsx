@@ -34,7 +34,7 @@ const DetailsCard = ({ animal }) => {
       className="object-cover rounded-xl"
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 25vw, 20vw"
     />
-    <div className="badge badge-md badge-ghost absolute top-5 right-6">
+    <div className="badge badge-xs badge-ghost absolute top-2 left-1">
       {category}
     </div>
   </figure>
