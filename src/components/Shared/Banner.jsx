@@ -20,7 +20,7 @@ const Banner = () => {
                     </div>
                     <div className='flex flex-col items-center lg:items-start gap-3 md:gap-9'>
                         <h1 className='font-bold text-4xl md:text-7xl'>Your  
-                            <span className='text-3xl md:text-5xl text-[#4CC9F0]'> Trusted</span> 
+                            <span className='text-3xl md:text-5xl text-[#FB5607]'> Trusted</span> 
                         <br/> 
                             <span className='text-3xl md:text-5xl text-[#3A86FF]'>Livestock</span> Marketplace
                         </h1>

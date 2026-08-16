@@ -15,15 +15,17 @@ const BookingForm = () => {
     <div>
       {/* Open the modal using document.getElementById('ID').showModal() method */}
       <button
-        className="btn"
+        className="btn btn-outline border-[#4CC9F0]  text-[#4CC9F0] rounded-lg hover:bg-[#4CC9F0] hover:text-white "
         onClick={() => document.getElementById("my_modal_5").showModal()}
       >
         Book Now
       </button>
       <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
-            <h2 className="font-bold">Book This Animal</h2>
+            <div className="space-y-2">
+              <h2 className="font-bold text:lg md:text-xl">Book This Animal</h2>
             <p className="text-gray-600">Fill in your information to reserve this animal for Qurbani.</p>
+            </div>
           <div className="mt-3">
             <form  onSubmit={handleForm}>
               <fieldset className="fieldset">
@@ -60,13 +62,13 @@ const BookingForm = () => {
                 
               </fieldset>
               <div className="flex gap-2 items-center mt-2">
-                <button type="submit" className="btn btn-neutral">Confirm Booking</button>
+                <button type="submit" className="btn text-white bg-[#4361EE]">Confirm Booking</button>
 
               {/* if there is a button in form, it will close the modal */}
               <button 
                 type="button" 
-                className="btn"
-                onClick={() => document.getElementById("my_modal_5").close()}>Close</button>
+                className="btn bg-red-500 text-white"
+                onClick={() => document.getElementById("my_modal_5").close()}>Cancel</button>
               </div>
             </form>
           </div>

@@ -8,7 +8,7 @@ const AnimalCard = ({ animal }) => {
   // const {image, breed, name, weight, location} = animal
   return (
     <div>
-      <div className="card bg-base-100 shadow-sm">
+      <div className="card bg-base-100 shadow-sm hover:shadow-lg transition-shadow duration-300">
         <figure className="relative w-full aspect-square">
           <Image
             src={animal.image}
