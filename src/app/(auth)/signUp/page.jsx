@@ -1,27 +1,37 @@
 "use client";
-import React, { useState } from "react";
-
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-
+import { authClient } from "@/lib/auth-client";
+import { toast } from "react-toastify";
 
 const SignUpPage = () => {
-     const {
-        register,
-        handleSubmit,
-        formState: { errors },
-      } = useForm();
-      const handleSignUp = (data) =>{
-        console.log(data)
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const handleSignUp = async (data) => {
+    const { data: res , error } = await authClient.signUp.email({
+      name: data.name, // required
+      email: data.email, // required
+      password: data.password, // required
+      image: data.url,
+    });
 
-      }
-    
-    return (
-   <div className="flex justify-center items-center py-15 md:py-20 px-5 max-w-7xl mx-auto">
+    if(res){
+        toast.success("Sign Up successful!");
+    }
+    if(error){
+        toast.error(error.message);
+    }
+  };
+
+  return (
+    <div className="flex justify-center items-center py-15 md:py-20 px-5 max-w-7xl mx-auto">
       <div className="bg-base-200 border-base-300 rounded-box w-sm shadow-sm border py-8 px-5">
         <h2 className="text-xl font-bold mb-2 text-center">
-         Create Your QurbaniHat Account
+          Create Your QurbaniHat Account
         </h2>
 
         <form onSubmit={handleSubmit(handleSignUp)}>
@@ -55,10 +65,7 @@ const SignUpPage = () => {
               placeholder="Enter image url"
               {...register("url", { required: "url is required" })}
             />
-            {errors.url&& (
-              <p className="text-red-500">{errors.url.message}</p>
-            )}
-
+            {errors.url && <p className="text-red-500">{errors.url.message}</p>}
 
             {/* password */}
             <label className="label">Password</label>
@@ -72,7 +79,9 @@ const SignUpPage = () => {
               <p className="text-red-500">{errors.password.message}</p>
             )}
 
-            <button className="btn bg-[#4CC9F0] hover:bg-blue-400 text-white mt-4">Sign Up</button>
+            <button className="btn bg-[#4CC9F0] hover:bg-blue-400 text-white mt-4">
+              Sign Up
+            </button>
           </fieldset>
 
           <div className="divider">or</div>
@@ -91,7 +100,7 @@ const SignUpPage = () => {
         </p>
       </div>
     </div>
-    );
+  );
 };
 
 export default SignUpPage;
