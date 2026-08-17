@@ -31,6 +31,11 @@ const SignInPage = () => {
     console.log(data);
   };
 
+  const handleGoogleSignIn = async () => {
+  const data = await authClient.signIn.social({
+    provider: "google",
+  });
+
   return (
     <div className="flex justify-center items-center py-15 md:py-20 px-5 max-w-7xl mx-auto">
       <div className="bg-base-200 border-base-300 rounded-box w-sm shadow-sm border py-8 px-5">
@@ -68,7 +73,7 @@ const SignInPage = () => {
           <div className="divider">or</div>
         </form>
 
-        <button className="btn w-full rounded-md">
+        <button onClick={handleGoogleSignIn} className="btn w-full rounded-md">
           <FcGoogle />
           Sign in with Google
         </button>
