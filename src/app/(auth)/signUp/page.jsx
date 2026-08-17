@@ -12,26 +12,26 @@ const SignUpPage = () => {
     formState: { errors },
   } = useForm();
   const handleSignUp = async (data) => {
-    const { data: res , error } = await authClient.signUp.email({
+    const { data: res, error } = await authClient.signUp.email({
       name: data.name, // required
       email: data.email, // required
       password: data.password, // required
       image: data.url,
     });
 
-    if(res){
-        toast.success("Sign Up successful!");
+    if (res) {
+      toast.success("Sign Up successful!");
     }
-    if(error){
-        toast.error(error.message);
+    if (error) {
+      toast.error(error.message);
     }
   };
 
   const handleGoogleSignIn = async () => {
-  const data = await authClient.signIn.social({
-    provider: "google",
-  });
-};
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+  };
 
   return (
     <div className="flex justify-center items-center py-15 md:py-20 px-5 max-w-7xl mx-auto">

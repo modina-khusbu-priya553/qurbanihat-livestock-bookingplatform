@@ -32,9 +32,10 @@ const SignInPage = () => {
   };
 
   const handleGoogleSignIn = async () => {
-  const data = await authClient.signIn.social({
-    provider: "google",
-  });
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+  };
 
   return (
     <div className="flex justify-center items-center py-15 md:py-20 px-5 max-w-7xl mx-auto">
@@ -67,7 +68,9 @@ const SignInPage = () => {
               <p className="text-red-500">{errors.password.message}</p>
             )}
 
-            <button className="btn bg-[#4361EE] hover:bg-blue-700 text-white mt-4">Sign In</button>
+            <button className="btn bg-[#4361EE] hover:bg-blue-700 text-white mt-4">
+              Sign In
+            </button>
           </fieldset>
 
           <div className="divider">or</div>
