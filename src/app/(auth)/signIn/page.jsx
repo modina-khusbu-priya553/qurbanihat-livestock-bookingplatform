@@ -1,70 +1,87 @@
 "use client";
-import { authClient } from '@/lib/auth-client';
-import Link from 'next/link';
-import React from 'react';
-import { useForm } from 'react-hook-form';
-
+import { authClient } from "@/lib/auth-client";
+import Link from "next/link";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { FcGoogle } from "react-icons/fc";
+import { toast } from "react-toastify";
 
 const SignInPage = () => {
-
-    const {
+  const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
-    } = useForm()
+  } = useForm();
 
-    const handleSignIn = async(data) =>{
-
-        const { data: res, error } = await authClient.signIn.email({
-            email: data.email, // required
-            password: data.password, // required
-            rememberMe: true,
-            callbackURL: "/",
-        });
-        if (error) {
-            alert(error.message);
-        }
-
-        if (res) {
-            alert("Login successful!");
-        }
-
-        console.log(data);
-
+  const handleSignIn = async (data) => {
+    const { data: res, error } = await authClient.signIn.email({
+      email: data.email, // required
+      password: data.password, // required
+      rememberMe: true,
+      callbackURL: "/",
+    });
+    if (error) {
+      toast.error(error.message);
     }
 
-    
+    if (res) {
+      toast.success("Login successful!");
+    }
 
-    return (
-        <div className='flex justify-center items-center h-[85vh] container mx-auto mt-2'>
-            <div className='bg-base-200 border-base-300 rounded-box w-xs border p-4'>
-                <h2 className="text-xl font-bold mb-2 text-center">Login with your account</h2>
+    console.log(data);
+  };
 
-                <form onSubmit={handleSubmit(handleSignIn)}>
-                    <fieldset className="fieldset">
-                        <label className="label">Email</label>
-                        <input 
-                            type="email" className="input" placeholder="Enter your Email"  
-                            {...register("email",  { required:"Email is required"})}/>
-                        {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+  return (
+    <div className="flex justify-center items-center py-15 md:py-20 px-5 max-w-7xl mx-auto">
+      <div className="bg-base-200 border-base-300 rounded-box w-sm shadow-sm border py-8 px-5">
+        <h2 className="text-xl font-bold mb-2 text-center">
+          Login with your account
+        </h2>
 
-                        <label className="label">Password</label>
-                        <input 
-                            type="password" className="input" placeholder="Password"  
-                            {...register("password",  { required:"Password is required"})}/>
-                        {errors.password && <p className="text-red-500">{errors.password.message}</p>}
+        <form onSubmit={handleSubmit(handleSignIn)}>
+          <fieldset className="fieldset">
+            <label className="label">Email</label>
+            <input
+              type="email"
+              className="input w-full"
+              placeholder="Enter your Email"
+              {...register("email", { required: "Email is required" })}
+            />
+            {errors.email && (
+              <p className="text-red-500">{errors.email.message}</p>
+            )}
 
-                        <button className="btn btn-neutral mt-4">Login</button>
-                    </fieldset>
-                </form>
+            <label className="label">Password</label>
+            <input
+              type="password"
+              className="input w-full"
+              placeholder="Password"
+              {...register("password", { required: "Password is required" })}
+            />
+            {errors.password && (
+              <p className="text-red-500">{errors.password.message}</p>
+            )}
 
-                <p className="text-center mt-4">
-                    Don&apos;t have an account? <Link href="/signUp" className="text-rose-500 hover:underline">Register</Link>
-                </p>
-            </div>
-        </div>
-    );
+            <button className="btn bg-[#4361EE] hover:bg-blue-700 text-white mt-4">Sign In</button>
+          </fieldset>
+
+          <div className="divider">or</div>
+        </form>
+
+        <button className="btn w-full rounded-md">
+          <FcGoogle />
+          Sign in with Google
+        </button>
+
+        <p className="text-center mt-4">
+          Don&apos;t have an account?{" "}
+          <Link href="/signUp" className="text-rose-500 hover:underline">
+            Register
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
 };
 
 export default SignInPage;
