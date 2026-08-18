@@ -31,7 +31,6 @@ const SignInPage = () => {
       toast.success("Login successful!");
     }
 
-    console.log(data);
   };
 
   const handleGoogleSignIn = async () => {

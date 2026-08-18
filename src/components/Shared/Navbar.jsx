@@ -10,6 +10,7 @@ const Navbar = () => {
   // get user from session
   const { data: session } = authClient.useSession();
   const user = session?.user;
+  
 
   const handleSignOut = async () => {
     await authClient.signOut({
@@ -82,7 +83,7 @@ const Navbar = () => {
               <div className="avatar avatar-placeholder">
                 <div className="bg-neutral text-neutral-content w-10 rounded-full">
                   {user?.image ? (
-                    <img alt={user?.name} src={user?.image} />
+                    <Image alt={user?.name} src={user?.image} width={20} height={20}/>
                   ) : (
                     <span className="text-lg">{user?.name?.charAt(0, 1)}</span>
                   )}

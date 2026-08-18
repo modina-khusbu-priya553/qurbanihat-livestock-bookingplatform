@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "react-toastify";
+import { router } from "better-auth/api";
 
 const SignUpPage = () => {
 
@@ -26,6 +27,7 @@ const SignUpPage = () => {
 
     if (res) {
       toast.success("Sign Up successful!");
+      router.push('/');
     }
     if (error) {
       toast.error(error.message);
