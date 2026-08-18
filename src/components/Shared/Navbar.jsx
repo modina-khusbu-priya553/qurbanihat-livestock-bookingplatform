@@ -32,7 +32,7 @@ const Navbar = () => {
       </li>
       {user && (
         <li className="text-lg font-semibold">
-          <Link href="/profile">My Profile</Link>
+          <Link href="/profile">Profile</Link>
         </li>
       )}
     </>

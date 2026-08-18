@@ -1,11 +1,12 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
-import { router } from "better-auth/api";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { TiEdit } from "react-icons/ti";
 import { toast } from "react-toastify";
 
 const UpdateProfile = () => {
+    const router = useRouter();
   const handleProfile = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -30,8 +31,7 @@ const UpdateProfile = () => {
   return (
     <div className="max-w-7xl mx-auto">
       <button
-        className="btn btn-outline border-[#4CC9F0] text-[#4CC9F0] 
-        rounded-lg hover:bg-[#4CC9F0] hover:text-white flex items-center gap-1"
+        className="btn btn-outline border-[#4CC9F0] text-[#4CC9F0] rounded-lg hover:bg-[#4CC9F0] hover:text-white flex items-center gap-1"
         onClick={() => document.getElementById("my_modal_5").showModal()}
       >
         <TiEdit className="text-lg" /> Update Information
