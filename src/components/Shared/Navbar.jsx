@@ -4,10 +4,11 @@ import Link from "next/link";
 import React from "react";
 import Logo from "../../../public/assets/logo.jpg";
 import { authClient } from "@/lib/auth-client";
-import { router } from "better-auth/api";
+import { useRouter } from "next/navigation";
 import NavLink from "./NavLink";
 
 const Navbar = () => {
+  const router = useRouter();
   // get user from session
   const { data: session } = authClient.useSession();
   const user = session?.user;
@@ -86,7 +87,7 @@ const Navbar = () => {
                   {user?.image ? (
                     <Image alt={user?.name} src={user?.image} width={20} height={20}/>
                   ) : (
-                    <span className="text-lg">{user?.name?.charAt(0, 1)}</span>
+                    <span className="text-lg">{user?.name?.slice(0, 2).toUpperCase()}</span>
                   )}
                 </div>
               </div>

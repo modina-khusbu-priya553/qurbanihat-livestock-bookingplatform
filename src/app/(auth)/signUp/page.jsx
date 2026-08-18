@@ -4,9 +4,10 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "react-toastify";
-import { router } from "better-auth/api";
+import { useRouter } from "next/navigation";
 
 const SignUpPage = () => {
+   const router = useRouter();
 
   // form data
   const {
@@ -22,7 +23,6 @@ const SignUpPage = () => {
       email: data.email, // required
       password: data.password, // required
       image: data.url,
-      callbackURL:"/"
     });
 
     if (res) {
@@ -37,6 +37,7 @@ const SignUpPage = () => {
   const handleGoogleSignIn = async () => {
     const data = await authClient.signIn.social({
       provider: "google",
+      callbackURL: "/",
     });
   };
 
@@ -105,7 +106,7 @@ const SignUpPage = () => {
           <div className="divider">or</div>
         </form>
 
-        <button onClick={handleGoogleSignIn} className="btn w-full rounded-md">
+        <button onClick={handleGoogleSignIn} type="button" className="btn w-full rounded-md">
           <FcGoogle />
           Sign in with Google
         </button>

@@ -36,6 +36,7 @@ const SignInPage = () => {
   const handleGoogleSignIn = async () => {
     const data = await authClient.signIn.social({
       provider: "google",
+      callbackURL: "/",
     });
   };
 
@@ -78,7 +79,7 @@ const SignInPage = () => {
           <div className="divider">or</div>
         </form>
 
-        <button onClick={handleGoogleSignIn} className="btn w-full rounded-md">
+        <button onClick={handleGoogleSignIn} type="button" className="btn w-full rounded-md">
           <FcGoogle />
           Sign in with Google
         </button>
