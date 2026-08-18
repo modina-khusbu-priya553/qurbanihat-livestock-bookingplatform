@@ -6,17 +6,22 @@ import { authClient } from "@/lib/auth-client";
 import { toast } from "react-toastify";
 
 const SignUpPage = () => {
+
+  // form data
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  // handle signUp
   const handleSignUp = async (data) => {
     const { data: res, error } = await authClient.signUp.email({
       name: data.name, // required
       email: data.email, // required
       password: data.password, // required
       image: data.url,
+      callbackURL:"/"
     });
 
     if (res) {
@@ -68,8 +73,13 @@ const SignUpPage = () => {
             <input
               type="url"
               className="input w-full"
-              placeholder="Enter image url"
-              {...register("url", { required: "url is required" })}
+              placeholder="https://example.com/image.jpg"
+              {...register("url", {
+                pattern: {
+                  value: /^https?:\/\/.+\..+/,
+                  message: "Please enter a valid image URL (http:// or https://)",
+                },
+              })}
             />
             {errors.url && <p className="text-red-500">{errors.url.message}</p>}
 

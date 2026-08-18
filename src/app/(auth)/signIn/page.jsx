@@ -7,6 +7,9 @@ import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
 
 const SignInPage = () => {
+
+
+  // form data
   const {
     register,
     handleSubmit,
