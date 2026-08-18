@@ -2,9 +2,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Logo from "../../../public/assets/cow.webp";
+import Logo from "../../../public/assets/logo.jpg";
 import { authClient } from "@/lib/auth-client";
 import { router } from "better-auth/api";
+import NavLink from "./NavLink";
 
 const Navbar = () => {
   // get user from session
@@ -25,14 +26,14 @@ const Navbar = () => {
   const links = (
     <>
       <li className="text-lg font-semibold">
-        <Link href="/">Home</Link>
+        <NavLink href={"/"}>Home</NavLink>
       </li>
       <li className="text-lg font-semibold">
-        <Link href="/allAnimals">All Animals</Link>
+        <NavLink href="/allAnimals">All Animals</NavLink>
       </li>
       {user && (
         <li className="text-lg font-semibold">
-          <Link href="/profile">Profile</Link>
+          <NavLink href="/profile">Profile</NavLink>
         </li>
       )}
     </>
@@ -65,9 +66,9 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex items-center justify-center gap-1">
             <div>
-              <Image src={Logo} alt="Logo" width={60} height={60} />
+              <Image src={Logo} alt="Logo" width={50} height={60} />
             </div>
 
             <h2 className="text-lg md:text-3xl font-bold">QurbaniHat</h2>

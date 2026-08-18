@@ -21,7 +21,7 @@ const DetailsCard = ({ animal }) => {
 
   return (
     <div className="max-w-7xl mx-auto px-5 py-15 md:py-20">
-      <h2 className="text-center font-bold text-2xl md:text-3xl py-5 md:py-10">Meet Your Qurbani Animal</h2>
+      <h2 className="text-center font-bold text-2xl md:text-4xl py-5 md:py-10">Meet Your Qurbani Animal</h2>
       <div className="flex flex-col md:flex-row rounded-lg shadow-lg hover:shadow-2xl p-2.5 gap-6 max-w-4xl mx-auto mt-10">
         {/* Left side - Image */}
         <div className="w-full">

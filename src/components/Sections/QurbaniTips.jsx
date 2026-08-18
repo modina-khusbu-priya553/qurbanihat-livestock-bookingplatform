@@ -5,6 +5,7 @@ import { FaScaleBalanced } from "react-icons/fa6";
 import { GiCow } from "react-icons/gi";
 
 const QurbaniTips = () => {
+
   const items = [
     {
       icon: <GiCow size={40}/>,
@@ -37,12 +38,12 @@ const QurbaniTips = () => {
   ];
 
   return (
-    <div className="bg-[#4361EE] md:mt-20 mt-15 py-10 md:py-16 px-6">
+    <div className="bg-[#4361EE] md:mt-20 mt-15 py-15 md:py-20 px-5">
       <div className="max-w-7xl mx-auto">
         
         {/* Heading */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+          <h2 className="text-xl md:text-4xl font-bold text-white mb-3">
             Qurbani Tips
           </h2>
           <p className="text-white/80 text-base md:text-lg">

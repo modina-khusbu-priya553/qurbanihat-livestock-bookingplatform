@@ -7,7 +7,7 @@ import { FaArrowRight, FaPlay } from "react-icons/fa";
 const Banner = () => {
     return (
         <div className='bg-base-200'>
-            <div className="max-w-7xl mx-auto px-4 pt-2.5 md:pt-20">
+            <div className="max-w-7xl mx-auto px-5 py-15 md:py-20">
                 <div className="flex items-center gap-8 flex-col-reverse justify-between lg:flex-row-reverse">
                     <div>
                         <Image

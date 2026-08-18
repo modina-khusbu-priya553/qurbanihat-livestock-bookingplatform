@@ -34,7 +34,7 @@ const TopBreeds = () => {
     },
   ];
   return (
-    <div className="max-w-7xl mx-auto py-15 md:py-20 px-6 md:mt-10">
+    <div className="max-w-7xl mx-auto py-15 md:py-20 px-5 md:mt-10">
       
       {/* Heading */}
       <div className="text-center max-w-2xl mx-auto mb-12">
